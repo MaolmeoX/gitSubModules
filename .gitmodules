@@ -1,0 +1,3 @@
+[submodule "php-add-lib"]
+	path = php-add-lib
+	url = https://github.com/Theosakamg/php-add-lib.git
