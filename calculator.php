@@ -1,6 +1,7 @@
 <?php
 require_once "./php-add-lib/AddCommand.php";
 require_once "./php-multi-lib/MultiCommand.php";
+
 echo "1 Add \n2 Multi \n3 Quit\n";
 
 $choice = trim(fgets(STDIN));
@@ -25,10 +26,10 @@ switch ($choice) {
  */
 function addChoice()
 {
-    $addClass = new AddCommand();
+    $addClass = new AddCommand(rand(1,100));
     echo "\nVeuillez saisir un nombre\n";
     $number = trim(fgets(STDIN));
-    return $addClass->add($number, $number);
+    return $addClass->do($number);
 }
 
 /**
@@ -36,8 +37,8 @@ function addChoice()
  */
 function multiChoice()
 {
-    $multiClass = new MultiCommand();
+    $multiClass = new MultiCommand(rand(1,100));
     echo "\nVeuillez saisir un nombre\n";
     $number = trim(fgets(STDIN));
-    return $multiClass->multi($number, $number);
+    return $multiClass->do($number);
 }
